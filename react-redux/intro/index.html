@@ -15,13 +15,14 @@
 				name: 'Taz Mania',
 				age: 20
 			}
-			handleClick(e){
+			handleClick = (e) => {
 				console.log(e.target)
+				console.log(this.state);
 			}
-			handleMouseOver(e){
+			handleMouseOver = (e) => {
 				console.log(e.target, e.pageX);
 			}
-			handleCopy(e){
+			handleCopy = (e) => {
 				console.log('Try to be original');
 			}
 			render(){
