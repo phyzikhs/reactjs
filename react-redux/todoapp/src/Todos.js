@@ -5,7 +5,7 @@ import React from 'react';
       todos.map(todo => {
         return(
           <div className= "collection-item" key={todo.id}>
-            <span onClick={ (id) => {deleteTodo(todo.id)} }>{todo.context}</span>
+            <span onClick={ (id) => {deleteTodo(todo.id)} }>{todo.content}</span>
           </div>
         );
       })
