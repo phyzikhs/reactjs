@@ -17,6 +17,8 @@ body {
 .post {
   overflow: hidden;
   padding-left: 80px;
+  margin-left: 10px;
+  align-self: center;
 }
 
 code {
