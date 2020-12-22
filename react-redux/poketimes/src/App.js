@@ -1,3 +1,4 @@
+import './index'
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom' //as Router, Route, NavLink
 import Navbar from './components/Navbar'
