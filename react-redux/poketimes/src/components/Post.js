@@ -1,26 +1,13 @@
-import Axios from 'axios';
+import {connect} from 'react-redux'
 import React, { Component } from 'react'
 
 class Post extends Component{
-    state = {
-        post: null
-    }
-    componentDidMount(){
-        // console.log(this.props);
-        let id = this.props.match.params.post_id;
-        Axios.get('https://jsonplaceholder.typicode.com/posts/'+id)
-        .then(res => {
-            this.setState({
-                post: res.data
-            })
-            console.log(res);
-        });
-      }
     render() {
-        const post = this.state.post ? (
+        console.log(this.props);
+        const post = this.props.post ? (
             <div className="post">
-                <h2 className="center">{this.state.post.title}</h2>
-                <p>{this.state.post.body}</p>
+                <h2 className="center">{this.props.post.title}</h2>
+                <p>{this.props.post.body}</p>
             </div>
         ) : (
             <div className="center">Loading post...</div>
@@ -33,4 +20,10 @@ class Post extends Component{
     }
 }
 
-export default Post;
+const mapStateToProps = (state, ownProps) => {
+    let id = ownProps.match.params.post_id;
+    return {
+        post: state.posts.find(post => post.id===id)
+    }
+}
+export default connect(mapStateToProps)(Post);
