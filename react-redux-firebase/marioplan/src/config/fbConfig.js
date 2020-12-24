@@ -14,6 +14,6 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-firebase.firestore().settings({ timestampsInSnapshots: true }) // no need, new version of firebase does't need this line
+firebase.firestore().settings({ timestampsInSnapshots: true }) // no need, new version of firebase does not need this line
 
 export default firebase;
