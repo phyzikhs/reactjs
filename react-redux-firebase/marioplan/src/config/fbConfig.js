@@ -3,7 +3,7 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
+const config = {
   apiKey: "AIzaSyDzUkTWrBVLIF7Hay84XWDvo76HB65WrkE",
   authDomain: "ngelemar-weapons-marioplan.firebaseapp.com",
   projectId: "ngelemar-weapons-marioplan",
@@ -13,7 +13,7 @@ const firebaseConfig = {
   measurementId: "G-MCXK5P620S"
 };
 
-firebase.initializeApp(firebaseConfig);
-firebase.firestore().settings({ timestampsInSnapshots: true }) // no need, new version of firebase does not need this line
+firebase.initializeApp(config);
+// firebase.firestore().settings({ timestampsInSnapshots: true }) // no need, new version of firebase does not need this line
 
 export default firebase;
