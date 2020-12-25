@@ -16,4 +16,21 @@ const config = {
 firebase.initializeApp(config);
 // firebase.firestore().settings({ timestampsInSnapshots: true }) // no need, new version of firebase does not need this line
 
+// Firestore Security Rules:
+/*
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /projects/{project} {
+      allow read, write: if request.auth.uid != null;
+    }
+    match /users/{userID} {
+      allow create;
+      allow read: if request.auth.uid != null;
+      allow write: if request.auth.uid == userID;
+    }
+  }
+}
+*/
+
 export default firebase;
