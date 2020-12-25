@@ -18,7 +18,7 @@ function ProjectDetails(props) {
         </div>
         <div className="card-action grey lighten-4 grey-text">
           <div>Posted by {project.authorFirstName} {project.authorLastName}</div>
-          <div>23rd December, 2am</div>{/*project.createdAt*/}
+          <div>23rd December, 2am</div>
         </div>
       </div>
     </div>
