@@ -85,6 +85,14 @@ a{
 
 .sidenav-trigger {
   float: right !important;
+  display: none !important;
+}
+
+.icon-blue{
+  color: #1d3d82;
+}
+.icon-black{
+  color: gray;
 }
 
 form{
@@ -116,6 +124,17 @@ code {
     monospace;
 }
 
+@media screen and (max-width: 600px) {
+  .sidenav-trigger {
+    display: block !important;
+  }
+  .desktop-nav{
+    display: none;
+  }
+  .brand-logo{
+    align-self: center !important;
+  }
+}
 /* Responsive nnav */
 /*
 *,*::after,*::before{
