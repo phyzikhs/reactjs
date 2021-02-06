@@ -1,7 +1,6 @@
 import {connect} from 'react-redux'
 import React, { Component } from 'react'
 import { createPost } from '../actions/postActions'
-import { Link } from 'react-router-dom'
 
 class CreatePost extends Component{
     state = {
@@ -23,11 +22,11 @@ class CreatePost extends Component{
           id: Date.now()+""
         });
         // this.props.history.push('/');
-        this.state = {
+        this.setState({
           id: "",
           title: "",
           body: ""
-        };
+        });
         // console.log(e);
       }
     }
@@ -38,11 +37,11 @@ class CreatePost extends Component{
               <h5 className="grey-text text-darken-3">Write a New Post</h5>
               <div className="input-field">
                 <label htmlFor="email">Title</label>
-                <input type="text" id="title" onChange={this.handleChange}/>
+                <input type="text" value={this.state.title} id="title" onChange={this.handleChange}/>
               </div>
               <div className="input-field col s12 m6">
                 <label htmlFor="body">Body</label>
-                <textarea id="body" className="materialize-textarea" onChange={this.handleChange}></textarea>
+                <textarea id="body" value={this.state.body} className="materialize-textarea" onChange={this.handleChange}></textarea>
               </div>
               <div className="input-field">
                 <button className="modal-close btn red lighten-1 z-depth-0">Post</button>

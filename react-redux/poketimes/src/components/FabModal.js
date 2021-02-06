@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import EditPen from '../images/icons8-pencil-64.png'
 import CreatePost from './CreatePost'
 
@@ -8,7 +7,7 @@ class FabModal extends Component {
     const M = window.M;
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.modal');
-      var instances = M.Modal.init(elems, {onCloseEnd: M.Modal.reset});
+      var instances = M.Modal.init(elems, {});
     });
   }
   render() {
