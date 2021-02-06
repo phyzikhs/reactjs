@@ -11,3 +11,10 @@ export const createPost = (post) => {
         post
     }
 }
+
+export const toggleLike = (id) => {
+    return {
+        type: "TOGGLE_LIKE",
+        id
+    }
+}

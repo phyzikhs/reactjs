@@ -18,7 +18,7 @@ class Navbar extends Component {
 						<a href="#" data-target="mobile-demo" className="sidenav-trigger">
 							<i className="large material-icons">menu</i>
 						</a>
-						<ul className="right hide-on-med-and-down">
+						<ul className="right desktop-nav">
 							<li><NavLink to="/">Home</NavLink></li>
 							<li><NavLink to="/about">About</NavLink></li>
 							<li><NavLink to="/contact">Contact</NavLink></li>
