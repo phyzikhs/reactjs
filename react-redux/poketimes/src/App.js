@@ -15,6 +15,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar />
+          <FabModal />
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
@@ -22,7 +23,6 @@ class App extends Component {
             <Route path="/new" component={CreatePost} />
             <Route exact path="/:post_id" component={Post}/>
           </Switch>
-          <FabModal />
         </div>
       </BrowserRouter>
     );

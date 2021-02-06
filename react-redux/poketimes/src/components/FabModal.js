@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import EditPen from '../images/icons8-pencil-64.png'
 
 class FabModal extends Component {
@@ -6,20 +7,14 @@ class FabModal extends Component {
     return (
       <div>
         {/* <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> */}
-        <div className="fixed-action-btn">
+        {/* <div className="fixed-action-btn top">
           <a className="btn-floating btn-large red">
           <img className="edit-pen" src={EditPen} alt=""/>
           </a>
-        </div>
-        <div id="modal1" className="modal">
-          <div className="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
-          </div>
-          <div className="modal-footer">
-            <a href="#!" className="modal-close waves-effect waves-green btn-flat">Agree</a>
-          </div>
-        </div>
+        </div> */}
+        <Link to='/new' className="btn-floating btn-large halfway-fab waves-effect waves-light red darken-3">
+            <img className='fab-icon' src={EditPen} alt="New"/>
+        </Link>
       </div>
     )
   }

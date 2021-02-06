@@ -31,9 +31,9 @@ class CreatePost extends Component{
                 <label htmlFor="email">Title</label>
                 <input type="text" id="title" onChange={this.handleChange}/>
               </div>
-              <div className="input-field">
+              <div className="input-field col s12 m6">
                 <label htmlFor="body">Body</label>
-                <input type="text" id="body" onChange={this.handleChange}/>
+                <textarea id="body" className="materialize-textarea" onChange={this.handleChange}></textarea>
               </div>
               <div className="input-field">
                 <button className="btn red lighten-1 z-depth-0">Post</button>

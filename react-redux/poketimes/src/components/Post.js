@@ -12,9 +12,9 @@ class Post extends Component{
     }
     render() {
         console.log(this.props);
-        const {postsID} = this.props;
-        console.log(postsID);
-        const index = postsID.indexOf(this.props.post.id);
+        const {postsID} = this.props; // to check current post on screen
+        // console.log(postsID);
+        const index = this.props.post ? postsID.indexOf(this.props.post.id) : -1;
         const leftButton = index>0 ? (
             <Link to={'/'+postsID[index-1]} className="fab arrow-button left center-left">
                 <img className='fab-content' src={LeftArrow} alt="Previous"/>
@@ -26,12 +26,12 @@ class Post extends Component{
             </Link>
         ) : null;
         const post = this.props.post ? (
-            <div className="post">
+            <div className="post post-details">
                 <h2 className="center">{this.props.post.title}</h2>
                 <p>{this.props.post.body}</p>
                 <div className="center">
                     {leftButton}
-                    <button className="btn grey" onClick={this.handleClick}>Delete Post</button>
+                    <button className="btn grey" onClick={this.handleClick}>Delete</button>
                     {rightButton}
                 </div>
             </div>

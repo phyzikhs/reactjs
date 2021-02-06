@@ -12,13 +12,13 @@ class Home extends Component {
 			posts.map(post => {
 				return(
 					<div className="container post card" key={post.id}>
-						<img src={PokeballImg} alt="A pokeball"/>
-						<div className="card-content">
-							<Link to={"/"+post.id}>
-								<span className="card-title red-text">{post.title}</span>
-							</Link>
-							<p>{post.body}</p>
-						</div>
+						<Link to={"/"+post.id}>
+							<img src={PokeballImg} alt="A pokeball"/>
+							<div className="card-content">
+									<span className="card-title red-text">{post.title}</span>
+								<p>{post.body}</p>
+							</div>
+						</Link>
 					</div>
 				);
 			})
