@@ -1,26 +1,38 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { NavLink, withRouter} from 'react-router-dom'
 
-const Navbar = (props) => {
-	// console.log(props);
-	return (
-		<nav className="nav-wrapper red darken-3">
-			<div className="container">
-				<NavLink className="brand-logo left" to="/">Poke'Times</NavLink>
-				<a href="#" data-target="mobile-demo" className="sidenav-trigger">☰</a>
-				<ul className="right hide-on-med-and-down">
-					<li><NavLink to="/">Home</NavLink></li>
-					<li><NavLink to="/about">About</NavLink></li>
-					<li><NavLink to="/contact">Contact</NavLink></li>
-				</ul>
-				<ul className="sidenav right" id="mobile-demo">
+class Navbar extends Component {
+	componentDidMount() {
+		document.addEventListener('DOMContentLoaded', function() {
+			const M = window.M;
+			var elems = document.querySelectorAll('.sidenav');
+			var instances = M.Sidenav.init(elems, {});
+		});
+	}
+	render() {
+		return (
+			<div>
+				<nav className="nav-wrapper red darken-3">
+					<div className="container">
+						<NavLink className="brand-logo left" to="/">Poke'Times</NavLink>
+						<a href="#" data-target="mobile-demo" className="sidenav-trigger">
+							<i className="large material-icons">menu</i>
+						</a>
+						<ul className="right hide-on-med-and-down">
+							<li><NavLink to="/">Home</NavLink></li>
+							<li><NavLink to="/about">About</NavLink></li>
+							<li><NavLink to="/contact">Contact</NavLink></li>
+						</ul>
+					</div>
+				</nav>
+				<ul className="sidenav right red darken-3" id="mobile-demo">
 					<li><NavLink to="/">Home</NavLink></li>
 					<li><NavLink to="/about">About</NavLink></li>
 					<li><NavLink to="/contact">Contact</NavLink></li>
 				</ul>
 			</div>
-		</nav>
-	);
+		)
+	}
 }
 
 export default withRouter(Navbar);
