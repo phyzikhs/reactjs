@@ -5,9 +5,9 @@ import PokeballImg from '../pokeball.png'
 
 class Home extends Component {
 	render() {
-		console.log(this.props);
+		// console.log(this.props);
 		const posts = this.props.posts;
-		console.log(posts);
+		// console.log(posts);
 		const postList = (posts.length) ? (
 			posts.map(post => {
 				return(

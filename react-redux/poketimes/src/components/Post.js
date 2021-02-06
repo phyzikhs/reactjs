@@ -11,7 +11,7 @@ class Post extends Component{
         this.props.history.push('/');
     }
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         const {postsID} = this.props; // to check current post on screen
         // console.log(postsID);
         const index = this.props.post ? postsID.indexOf(this.props.post.id) : -1;
