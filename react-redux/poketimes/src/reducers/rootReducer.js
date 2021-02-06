@@ -18,13 +18,13 @@ const rootReducer = (state = initState, action) => {
 		}
 	}
 	else if(action.type === 'CREATE_POST'){
-		let newPosts = [
+		/*let newPosts = [
 			...state.posts,
 			action.post
-		]
+		]*/
 		return {
 			...state,
-			posts: newPosts
+			posts: [...state.posts, action.post]
 		}
 	}
 	return state;

@@ -1,10 +1,11 @@
 import {connect} from 'react-redux'
 import React, { Component } from 'react'
 import { createPost } from '../actions/postActions'
+import { Link } from 'react-router-dom'
 
 class CreatePost extends Component{
     state = {
-      id: Math.random()+"", // not the best idea
+      id: "", // not the best idea
       title: "",
       body: ""
     }
@@ -14,17 +15,25 @@ class CreatePost extends Component{
       })
     }
     handleSubmit = (e) => {
-        if (this.state.title && this.state.body) {
-          this.props.createPost(this.state);
-          this.props.history.push('/');
-        }
-        else{
-          e.preventDefault();
-        }
+      // console.log(this.state);
+      e.preventDefault();
+      if (this.state.title && this.state.body) {
+        this.props.createPost({
+          ...this.state,
+          id: Date.now()+""
+        });
+        // this.props.history.push('/');
+        this.state = {
+          id: "",
+          title: "",
+          body: ""
+        };
+        // console.log(e);
+      }
     }
     render() {
         return (
-          <div className="container  z-depth-1">
+          <div className="container z-depth-1">
             <form onSubmit={this.handleSubmit} className="white">
               <h5 className="grey-text text-darken-3">Write a New Post</h5>
               <div className="input-field">
@@ -36,7 +45,7 @@ class CreatePost extends Component{
                 <textarea id="body" className="materialize-textarea" onChange={this.handleChange}></textarea>
               </div>
               <div className="input-field">
-                <button className="btn red lighten-1 z-depth-0">Post</button>
+                <button className="modal-close btn red lighten-1 z-depth-0">Post</button>
               </div>
             </form>
           </div>

@@ -1,20 +1,26 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import EditPen from '../images/icons8-pencil-64.png'
+import CreatePost from './CreatePost'
 
 class FabModal extends Component {
+  componentDidMount() {
+    const M = window.M;
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, {onCloseEnd: M.Modal.reset});
+    });
+  }
   render() {
     return (
       <div>
-        {/* <a className="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> */}
-        {/* <div className="fixed-action-btn top">
-          <a className="btn-floating btn-large red">
-          <img className="edit-pen" src={EditPen} alt=""/>
-          </a>
-        </div> */}
-        <Link to='/new' className="btn-floating btn-large halfway-fab waves-effect waves-light red darken-3">
-            <img className='fab-icon' src={EditPen} alt="New"/>
-        </Link>
+        <a className="btn-floating btn-large halfway-fab waves-effect waves-light red darken-3 modal-trigger" href="#create">
+          <img className='fab-icon' src={EditPen} alt="New"/>
+        </a>
+
+        <div id="create" className="modal">
+          <CreatePost />
+        </div>
       </div>
     )
   }
