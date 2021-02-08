@@ -18,6 +18,9 @@ class Home extends Component {
 		this.props.toggleLike(post.id);
 		// console.log(post.like);
 	}
+	numberWithCommas = (x) => {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
 	render() {
 		// console.log(this.props);
 		const posts = this.props.posts;
@@ -31,17 +34,25 @@ class Home extends Component {
 						<img src={PokeballImg} alt="A pokeball"/>
 						<div className="card-content">
 							<Link to={"/"+post.id}>
-								<span className="card-title blue-text">{post.title}</span>
+								<span className="card-title icon-blue">{post.title}</span>
 								<p>{post.body}</p>
 							</Link>
 							<div className="row container">
-								<a href="#?" className="col s6 m3" onClick={() => {this.toggleLike(post)}}>
+								<a href="#?" className="col s4 m2" onClick={() => {this.toggleLike(post)}}>
 									<div>
-										<i className={"material-icons icon-" + likeColor}>thumb_up</i>
+										<i className={"material-icons icon-" + likeColor}>favorite</i>
 									</div>
-									<p>{post.likes}</p>
+									<p>{this.numberWithCommas(post.likes)}</p>
 								</a>
-								<a className='dropdown-trigger btn col s6 m3' href='#' data-target='dropdown1'>Drop Me!</a>
+								<Link to={"/"+post.id} className="col s4 m2">
+								<div>
+									<i className="material-icons icon-black">chat</i>
+								</div>
+								<p>{this.numberWithCommas(post.comments)}</p>
+							</Link>
+								<a className='dropdown-trigger col s4 m2' href='#' data-target='dropdown1'>
+									<i className="material-icons icon-black">share</i>
+								</a>
 							</div>
 							<ul id='dropdown1' className='dropdown-content'>
 								<li><a href="#!">one</a></li>

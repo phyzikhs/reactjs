@@ -36,7 +36,7 @@ class CreatePost extends Component{
             <form onSubmit={this.handleSubmit} className="white">
               <h5 className="grey-text text-darken-3">Write a New Post</h5>
               <div className="input-field">
-                <label htmlFor="email">Title</label>
+                <label htmlFor="title">Title</label>
                 <input type="text" value={this.state.title} id="title" onChange={this.handleChange}/>
               </div>
               <div className="input-field col s12 m6">

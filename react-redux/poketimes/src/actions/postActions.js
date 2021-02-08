@@ -18,3 +18,10 @@ export const toggleLike = (id) => {
         id
     }
 }
+
+export const addNewComment = (comment) => {
+    return {
+        type: "ADD_NEW_COMMENT",
+        newComment: comment
+    }
+}
