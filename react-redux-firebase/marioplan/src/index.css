@@ -33,3 +33,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.hamburger{
+  display: none;
+}
+.sidenav-trigger {
+  float: right !important;
+  display: none !important;
+}
+
+@media only screen and (max-width: 700px) {
+  .brand-logo{
+    left: 25% !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body {
+    width: 100%;
+  }
+  .desktop-nav{
+    display: none;
+  }
+  .brand-logo{
+    left: 25% !important;
+  }
+  .hamburger{
+    display: inline-block;
+  }
+  .sidenav-trigger {
+    display: block !important;
+  }
+}
