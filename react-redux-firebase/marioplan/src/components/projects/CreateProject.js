@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import { createNotification } from '../../store/actions/notifActions'
 import {createProject} from '../../store/actions/projectActions'
 class CreateProject extends Component {
   state = {
@@ -14,8 +15,12 @@ class CreateProject extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(this.props.createProject);
+
     this.props.createProject(this.state);
+    this.props.createNotification({
+      user: this.props.profile.firstName+" "+this.props.profile.lastName,
+      content: "created a project",
+    })
     this.props.history.push('/')
   }
   render() {
@@ -44,14 +49,17 @@ class CreateProject extends Component {
 }
 
 const mapStateToProps = (state) => {
+  // console.log(state);
   return {
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    profile: state.firebase.profile
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createProject: (project) => dispatch(createProject(project))
+    createProject: (project) => dispatch(createProject(project)),
+    createNotification: (notification) => dispatch(createNotification(notification))
   }
 }
 

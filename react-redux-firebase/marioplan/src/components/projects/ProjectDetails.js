@@ -10,7 +10,7 @@ function ProjectDetails(props) {
   // console.log(props);
   // console.log(id);
   const { project, auth } = props;
-  console.log(project);
+  // console.log(project);
   if (!auth.uid){
     return (
       <Redirect to='/signin' />

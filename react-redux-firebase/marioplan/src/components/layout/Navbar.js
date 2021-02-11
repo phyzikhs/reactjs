@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 
 class Navbar extends Component {
   componentDidMount() {
-    console.log('mounted');
+    // console.log('mounted');
     document.addEventListener('DOMContentLoaded', function() {
       const M = window.M;
 			var elems = document.querySelectorAll('.sidenav');

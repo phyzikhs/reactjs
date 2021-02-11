@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signUp } from '../../store/actions/authActions'
+import { createNotification } from '../../store/actions/notifActions'
 
 class SignUp extends Component {
   state = {
@@ -19,6 +20,10 @@ class SignUp extends Component {
     e.preventDefault();
     // console.log(this.state);
     this.props.signUp(this.state);
+    this.props.createNotification({
+      user: this.state.firstName+" "+this.state.lastName,
+      content: "joined the party",
+    })
   }
   render() {
     const { auth, authError } = this.props
@@ -73,7 +78,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     signUp: (newUser) => {
       dispatch(signUp(newUser))
-    }
+    },
+    createNotification: (notification) => dispatch(createNotification(notification))
   }
 }
 

@@ -37,7 +37,7 @@ export const signUp = (newUser) => {
         initials: newUser.firstName[0]+newUser.lastName[0]
       })
     }).then(() => {
-      dispatch({type: 'SIGNUP_SUCCESS'})
+      dispatch({type: 'SIGNUP_SUCCESS'});
     }).catch(err => {
       dispatch({type: 'SIGNUP_ERROR', err})
     })
