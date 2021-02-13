@@ -31,6 +31,27 @@ const authReducer = (state = initState, action) => {
         ...state,
         authError: action.err.message
       };
+    case 'PROFILE_PIC_UPLOADED':
+      console.log('Profile pic updated');
+      return state;
+    case 'PROFILE_PIC_UPLOAD_ERROR':
+      switch (action.err.code) {
+        case 'storage/object-not-found':
+          console.log('File does not exist');
+          break;
+        case 'storage/unauthorized':
+          console.log('User does not have permission to access the file');
+          break;
+        case 'storage/canceled':
+          console.log('User canceled the upload');
+          break;
+        case 'storage/unknown':
+          console.log('Unknown storage error occurred, inspect the server response', action.err);
+          break;
+        default:
+          console.log("Uploading failed:", action.err);
+          break;
+      }
     default:
       return state;
   }

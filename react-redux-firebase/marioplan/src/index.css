@@ -39,17 +39,62 @@ code {
 }
 .sidenav-trigger {
   float: right !important;
-  display: none !important;
+  /* display: none !important; */
+}
+
+.cyan-icon{
+  color: #95e8f3;
+}
+
+/* Profile CSS */
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+}
+.default-pic {
+  width: 50%;
+  height: 50%;
+}
+
+.image-section{
+  position: relative;
+}
+#progress-bar {
+  visibility: hidden;
+  z-index: 9;
+  height: 10px;
+  width: 100%;
+  position: absolute;
+}
+#progress-status {
+  height: 100%;
+  margin: 0%;
+  width: 5%;
+}
+.btn {
+  align-items: center;
+  margin: auto;
+}
+
+.card-custom{
+  padding: 1% 0%;
 }
 
 @media only screen and (max-width: 800px) {
   .brand-logo{
     left: 25% !important;
   }
+  h1 {
+    font-size: 3.5rem;
+  }
 }
 @media only screen and (max-width: 600px) {
   body {
     width: 100%;
+  }
+  h1 {
+    font-size: 2rem;
   }
   .desktop-nav{
     display: none;

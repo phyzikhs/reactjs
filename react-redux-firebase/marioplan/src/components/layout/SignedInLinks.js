@@ -10,15 +10,17 @@ const SignedInLinks = (props) => {
       <ul className="right desktop-nav">
         <li><NavLink to='/create'>New Project</NavLink></li>
         <li><a onClick={props.signOut}>Log Out</a></li>
-        <li><NavLink to='/' className='btn btn-floating pink lighten-1'>
+        <li><NavLink to='/profile' className='btn btn-floating waves-effect waves-light pink lighten-1'>
           {props.profile.initials}
         </NavLink></li>
       </ul>
       <ul className="sidenav" id="mobile-demo">
         <li><NavLink to='/create'>New Project</NavLink></li>
         <li><a onClick={props.signOut}>Log Out</a></li>
-        <li><NavLink to='/' className='btn btn-floating pink lighten-1'>
-          {props.profile.initials}
+        <li><NavLink to='/profile' className='btn btn-floating pink lighten-1'>
+          {props.profile.profilePicURL ? (
+            <img src={props.profile.profilePicURL} alt="" class="circle responsive-img" />
+          ) : props.profile.initials}
         </NavLink></li>
       </ul>
     </div>

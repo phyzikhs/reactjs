@@ -1,9 +1,10 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
+import 'firebase/storage';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const config = {
+const fbConfig = {
   apiKey: "AIzaSyDzUkTWrBVLIF7Hay84XWDvo76HB65WrkE",
   authDomain: "ngelemar-weapons-marioplan.firebaseapp.com",
   projectId: "ngelemar-weapons-marioplan",
@@ -13,7 +14,9 @@ const config = {
   measurementId: "G-MCXK5P620S"
 };
 
-firebase.initializeApp(config);
+firebase.initializeApp(fbConfig);
+
+const storage = firebase.storage()
 // firebase.firestore().settings({ timestampsInSnapshots: true }) // no need, new version of firebase does not need this line
 
 // Firestore Security Rules:
@@ -33,4 +36,4 @@ service cloud.firestore {
 }
 */
 
-export default firebase;
+export {storage, fbConfig, firebase as default};
